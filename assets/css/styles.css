@@ -1,0 +1,91 @@
+:root {
+    --background-color: #fff;
+    --text-color: #121416d8;
+    --link-color: #543fd7;
+}
+
+html[data-theme='light'] {
+    --background-color: #fff;
+    --text-color: #121416d8;
+    --link-color: #543fd7;
+}
+
+html[data-theme='dark'] {
+    --background-color: #212a2e;
+    --text-color: #F7F8F8;
+    --link-color: #828fff;
+}
+
+html[data-theme-reverse='dark'] {
+    --background-color-reverse: #fff;
+    --text-color-reverse: #121416d8;
+    --link-color-reverse: #543fd7;
+}
+
+html[data-theme-reverse='light'] {
+    --background-color-reverse: #212a2e;
+    --text-color-reverse: #F7F8F8;
+    --link-color-reverse: #828fff;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+#toggler {
+    background: var(--background-color-reverse);
+    color: var(--text-color-reverse);
+    transition: all 0.3s;
+}
+
+#toggler {
+    height: 50px;
+    padding: 5px 70px 5px 5px;
+    position: relative;
+    top: 50vh;
+    left: 50%;
+    border: none;
+    border-radius: 25px;
+    z-index: -1;
+}
+
+#toggler:hover {
+    cursor: pointer;
+}
+
+#light {
+    animation: moove .5s ease-in forwards alternate;
+    transform: translateX(-50px);
+    z-index: 100;
+    border: 3px solid var(--background-color);
+    border-radius: 50%;
+    padding: 3px;
+}
+      
+@keyframes moove {
+  from {
+      transform: translateX(1px) rotate(0deg);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(65px) rotate(360deg);
+      opacity: 1;
+  }
+}
+
+#theme {
+    position: absolute;
+    font-family: cursive;
+    font-size: 17px;
+    transform: translate(685px,338px);
+    z-index: 1;
+    color: var(--text-color-reverse);
+    transition: all 0.3s ;
+}
